@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "com.gaoice.web",
+      "type": "com.gaoice.web.spring.boot.autoconfigure.WebAutoConfigure",
+      "sourceType": "com.gaoice.web.spring.boot.autoconfigure.WebAutoConfigure"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.gaoice.web.enable-ex-r-time",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.gaoice.web.spring.boot.autoconfigure.WebAutoConfigure"
+    }
+  ],
+  "hints": []
+}
