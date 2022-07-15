@@ -8,17 +8,17 @@ import java.util.HashMap;
  * @author gaoice
  */
 @Data
-public class OplogInfo {
+public class OplogWrapper {
 
     private String oplog;
 
-    private HashMap<String, Object> oplogDetail;
+    private HashMap<String, Object> extendedHashMap;
 
     private boolean success;
 
-    public OplogInfo(String oplog, HashMap<String, Object> oplogDetail, boolean success) {
+    public OplogWrapper(String oplog, HashMap<String, Object> extendedHashMap, boolean success) {
         this.oplog = oplog;
-        this.oplogDetail = oplogDetail;
+        this.extendedHashMap = extendedHashMap;
         this.success = success;
     }
 }

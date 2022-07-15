@@ -13,10 +13,10 @@ public interface OplogService {
     Logger LOGGER = LoggerFactory.getLogger(OplogService.class);
 
     @Async("oplogExecutor")
-    default void log(String summary, HashMap<String, Object> detail, boolean success) {
-        LOGGER.debug(summary, detail, success);
-        this.saveOplog(new OplogInfo(summary, detail, success));
+    default void log(String oplog, HashMap<String, Object> detail, boolean success) {
+        LOGGER.debug(oplog, detail, success);
+        this.saveOplog(new OplogWrapper(oplog, detail, success));
     }
 
-    void saveOplog(OplogInfo oplog);
+    void saveOplog(OplogWrapper oplog);
 }
