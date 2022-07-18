@@ -1,5 +1,6 @@
 package com.gaoice.oplog;
 
+import com.gaoice.oplog.annotation.Oplog;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -22,7 +23,7 @@ public class OplogAspect {
         this.oplogService = oplogService;
     }
 
-    @AfterReturning(pointcut = "@annotation(com.gaoice.oplog.Oplog)")
+    @AfterReturning(pointcut = "@annotation(com.gaoice.oplog.annotation.Oplog)")
     public void afterReturning(JoinPoint point) {
         try {
             oplogService.log(getAnnotationValue(point), ExtendedOplog.get(), true);
@@ -33,7 +34,7 @@ public class OplogAspect {
         }
     }
 
-    @AfterThrowing(pointcut = "@annotation(com.gaoice.oplog.Oplog)")
+    @AfterThrowing(pointcut = "@annotation(com.gaoice.oplog.annotation.Oplog)")
     public void afterThrowing(JoinPoint point) {
         try {
             oplogService.log(getAnnotationValue(point), ExtendedOplog.get(), false);
