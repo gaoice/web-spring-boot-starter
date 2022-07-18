@@ -1,7 +1,7 @@
-package com.gaoice.oplog.annotation;
+package com.gaoice.web.oplog.annotation;
 
-import com.gaoice.oplog.OplogAspect;
-import com.gaoice.oplog.OplogConfig;
+import com.gaoice.web.oplog.OplogAspect;
+import com.gaoice.web.oplog.OplogConfig;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;

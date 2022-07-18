@@ -1,4 +1,4 @@
-package com.gaoice.oplog;
+package com.gaoice.web.oplog;
 
 import com.gaoice.common.map.ExtendedHashMap;
 

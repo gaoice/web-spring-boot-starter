@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.gaoice.web.spring.boot.autoconfigure.WebAutoConfigure
+  com.gaoice.web.spring.boot.auto.WebAutoConfiguration

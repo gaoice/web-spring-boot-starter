@@ -1,4 +1,4 @@
-package com.gaoice.web;
+package com.gaoice.web.r;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,7 +17,7 @@ public class RTime<T> extends R<T> {
     public RTime() {
     }
 
-    public RTime(long code, T data, String msg) {
+    public RTime(String code, T data, String msg) {
         super(code, data, msg);
     }
 
@@ -28,7 +28,7 @@ public class RTime<T> extends R<T> {
         return r;
     }
 
-    public static <T> RTime<T> error(long code, String msg) {
+    public static <T> RTime<T> error(String code, String msg) {
         RTime<T> r = new RTime<>();
         r.setCode(code);
         r.setMsg(msg);

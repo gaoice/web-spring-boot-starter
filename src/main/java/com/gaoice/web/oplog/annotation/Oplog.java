@@ -1,4 +1,4 @@
-package com.gaoice.oplog.annotation;
+package com.gaoice.web.oplog.annotation;
 
 import java.lang.annotation.*;
 

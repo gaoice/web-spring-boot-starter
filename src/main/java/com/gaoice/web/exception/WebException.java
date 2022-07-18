@@ -1,13 +1,13 @@
 package com.gaoice.web.exception;
 
-import com.gaoice.web.RConst;
+import com.gaoice.web.r.RConst;
 
 /**
  * @author gaoice
  */
 public class WebException extends RuntimeException {
 
-    private long code;
+    private String code;
 
     private String msg;
 
@@ -21,17 +21,17 @@ public class WebException extends RuntimeException {
         this.msg = s;
     }
 
-    public WebException(long code, String s) {
+    public WebException(String code, String s) {
         super(s);
         this.code = code;
         this.msg = s;
     }
 
-    public long getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(long code) {
+    public void setCode(String code) {
         this.code = code;
     }
 

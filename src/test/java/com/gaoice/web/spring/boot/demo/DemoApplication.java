@@ -1,8 +1,8 @@
 package com.gaoice.web.spring.boot.demo;
 
-import com.gaoice.web.R;
-import com.gaoice.web.RTime;
 import com.gaoice.web.exception.WebException;
+import com.gaoice.web.r.R;
+import com.gaoice.web.r.RTime;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;

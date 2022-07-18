@@ -1,6 +1,6 @@
-package com.gaoice.oplog;
+package com.gaoice.web.oplog;
 
-import com.gaoice.oplog.annotation.Oplog;
+import com.gaoice.web.oplog.annotation.Oplog;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;

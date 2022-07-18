@@ -1,4 +1,4 @@
-package com.gaoice.web;
+package com.gaoice.web.r;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class R<T> {
 
-    private long code;
+    private String code;
 
     private T data;
 
@@ -19,7 +19,7 @@ public class R<T> {
     public R() {
     }
 
-    public R(long code, T data, String msg) {
+    public R(String code, T data, String msg) {
         this.code = code;
         this.data = data;
         this.msg = msg;
@@ -32,7 +32,7 @@ public class R<T> {
         return r;
     }
 
-    public static <T> R<T> error(long code, String msg) {
+    public static <T> R<T> error(String code, String msg) {
         R<T> r = new R<>();
         r.setCode(code);
         r.setMsg(msg);
@@ -44,6 +44,6 @@ public class R<T> {
     }
 
     public boolean isSuccess() {
-        return RConst.OK == code;
+        return RConst.OK.equals(code);
     }
 }
