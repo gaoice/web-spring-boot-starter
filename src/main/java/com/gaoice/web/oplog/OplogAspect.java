@@ -23,25 +23,25 @@ public class OplogAspect {
         this.oplogService = oplogService;
     }
 
-    @AfterReturning(pointcut = "@annotation(com.gaoice.oplog.annotation.Oplog)")
+    @AfterReturning(pointcut = "@annotation(com.gaoice.web.oplog.annotation.Oplog)")
     public void afterReturning(JoinPoint point) {
         try {
-            oplogService.log(getAnnotationValue(point), ExtendedOplog.get(), true);
+            oplogService.log(getAnnotationValue(point), OplogContext.get(), true);
         } catch (Exception e) {
             log.error("OplogAspect error: ", e);
         } finally {
-            ExtendedOplog.clear();
+            OplogContext.clear();
         }
     }
 
-    @AfterThrowing(pointcut = "@annotation(com.gaoice.oplog.annotation.Oplog)")
+    @AfterThrowing(pointcut = "@annotation(com.gaoice.web.oplog.annotation.Oplog)")
     public void afterThrowing(JoinPoint point) {
         try {
-            oplogService.log(getAnnotationValue(point), ExtendedOplog.get(), false);
+            oplogService.log(getAnnotationValue(point), OplogContext.get(), false);
         } catch (Exception e) {
             log.error("OplogAspect error: ", e);
         } finally {
-            ExtendedOplog.clear();
+            OplogContext.clear();
         }
     }
 

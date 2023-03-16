@@ -40,4 +40,10 @@ public class OplogConfig {
         e.setKeepAliveSeconds(keepAliveSeconds);
         return e;
     }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public OplogService oplogService() {
+        return new DefaultOplogService();
+    }
 }
