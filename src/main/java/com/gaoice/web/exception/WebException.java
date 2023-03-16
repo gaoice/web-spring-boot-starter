@@ -1,13 +1,13 @@
 package com.gaoice.web.exception;
 
-import com.gaoice.web.r.RConst;
+import org.springframework.http.HttpStatus;
 
 /**
  * @author gaoice
  */
 public class WebException extends RuntimeException {
 
-    private String code;
+    private int code;
 
     private String msg;
 
@@ -17,21 +17,21 @@ public class WebException extends RuntimeException {
 
     public WebException(String s) {
         super(s);
-        this.code = RConst.ERROR;
+        this.code = HttpStatus.INTERNAL_SERVER_ERROR.value();
         this.msg = s;
     }
 
-    public WebException(String code, String s) {
+    public WebException(int code, String s) {
         super(s);
         this.code = code;
         this.msg = s;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
