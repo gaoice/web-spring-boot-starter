@@ -1,16 +1,39 @@
 {
   "groups": [
     {
-      "name": "com.gaoice.web",
-      "type": "com.gaoice.web.spring.boot.autoconfigure.WebAutoConfigure",
-      "sourceType": "com.gaoice.web.spring.boot.autoconfigure.WebAutoConfigure"
+      "name": "oplog",
+      "type": "com.gaoice.web.oplog.OplogConfig",
+      "sourceType": "com.gaoice.web.oplog.OplogConfig"
     }
   ],
   "properties": [
     {
-      "name": "com.gaoice.web.enable-ex-r-time",
-      "type": "java.lang.Boolean",
-      "sourceType": "com.gaoice.web.spring.boot.autoconfigure.WebAutoConfigure"
+      "name": "oplog.core-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.gaoice.web.oplog.OplogConfig",
+      "defaultValue": 1
+    },
+    {
+      "name": "oplog.keep-alive-seconds",
+      "type": "java.lang.Integer",
+      "sourceType": "com.gaoice.web.oplog.OplogConfig",
+      "defaultValue": 60
+    },
+    {
+      "name": "oplog.max-pool-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.gaoice.web.oplog.OplogConfig"
+    },
+    {
+      "name": "oplog.queue-capacity",
+      "type": "java.lang.Integer",
+      "sourceType": "com.gaoice.web.oplog.OplogConfig"
+    },
+    {
+      "name": "oplog.thread-name-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.gaoice.web.oplog.OplogConfig",
+      "defaultValue": "oplog-"
     }
   ],
   "hints": []
