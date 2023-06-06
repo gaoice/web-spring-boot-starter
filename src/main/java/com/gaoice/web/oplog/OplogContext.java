@@ -1,6 +1,6 @@
 package com.gaoice.web.oplog;
 
-import com.gaoice.common.map.ExtendedHashMap;
+import java.util.HashMap;
 
 /**
  * 用于业务中传递参数给 OplogService
@@ -8,23 +8,22 @@ import com.gaoice.common.map.ExtendedHashMap;
  * @author gaoice
  */
 public class OplogContext {
-    private static final ThreadLocal<ExtendedHashMap<String, Object>> EXTENDED_MAP = new ThreadLocal<>();
+    private static final ThreadLocal<HashMap<String, Object>> MAP_THREAD_LOCAL = new ThreadLocal<>();
 
-    public static ExtendedHashMap<String, Object> append(String key, Object value) {
-        ExtendedHashMap<String, Object> extendedHashMap = EXTENDED_MAP.get();
-        if (extendedHashMap == null) {
-            extendedHashMap = new ExtendedHashMap<>();
-            EXTENDED_MAP.set(extendedHashMap);
+    public static void put(String key, Object value) {
+        HashMap<String, Object> map = MAP_THREAD_LOCAL.get();
+        if (map == null) {
+            map = new HashMap<>();
+            MAP_THREAD_LOCAL.set(map);
         }
-        extendedHashMap.append(key, value);
-        return extendedHashMap;
+        map.put(key, value);
     }
 
-    public static ExtendedHashMap<String, Object> get() {
-        return EXTENDED_MAP.get();
+    public static HashMap<String, Object> getMap() {
+        return MAP_THREAD_LOCAL.get();
     }
 
     public static void clear() {
-        EXTENDED_MAP.remove();
+        MAP_THREAD_LOCAL.remove();
     }
 }

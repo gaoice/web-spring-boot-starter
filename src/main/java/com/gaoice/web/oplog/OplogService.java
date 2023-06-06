@@ -11,4 +11,5 @@ public interface OplogService {
 
     @Async("oplogExecutor")
     void log(String operation, HashMap<String, Object> params, boolean success);
+
 }

@@ -49,10 +49,14 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <gaoice-common.version>1.0-SNAPSHOT</gaoice-common.version>
-        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <spring-boot.version>2.7.12</spring-boot.version>
         <easyexcel.version>2.0</easyexcel.version>
         <lombok.version>1.18.24</lombok.version>
+        <!-- util -->
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <guava.version>31.1-jre</guava.version>
+        <gson.version>2.9.0</gson.version>
     </properties>
 
     <dependencyManagement>
@@ -68,11 +72,29 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- apache util -->
         <dependency>
-            <groupId>com.gaoice</groupId>
-            <artifactId>common</artifactId>
-            <version>${gaoice-common.version}</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
+        </dependency>
+        <!-- google util -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
